@@ -1,6 +1,6 @@
 	* Input the required data
   
-  clear
+  	clear
 	input byte year double(civ_pen_totexp mil_pen_totexp)
 	 1  .73 2.81
 	 2  .83 2.65
@@ -31,10 +31,10 @@
 	label def year 12 "2021-22", modify
 	label def year 13 "2022-23", modify
   
-  * Installing necessary packages
-  ssc install schemepack, replace
-  ssc install palettes, replace
-  ssc install colrspace, replace
+  	* Installing necessary packages
+  	ssc install schemepack, replace
+  	ssc install palettes, replace
+  	ssc install colrspace, replace
 
 	* Generating variables to create a minor drop shadow effect
 	generate year_shadow = year - 0.14
@@ -47,9 +47,9 @@
 	local countmin = `r(min)'
  
 	local xlab
-    forval i=1(2)`count'{
-        local xlab "`xlab' `i' `" "`:lab (year) `i''" "'"
-    }
+    	forval i=1(2)`count'{
+        	local xlab "`xlab' `i' `" "`:lab (year) `i''" "'"
+    	}
 	
 	* Storing Max value for military and civilian expenditure 
 	quietly summ mil_pen_totexp
